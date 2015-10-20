@@ -13,15 +13,22 @@
 	$mac = str_replace(":STAMAC,","",$dataArr[3]);
 	$name = $dataArr[4];
 	$type = $dataArr[5];
-	
-	$devAll = explode("!",$dataArr[6]);   // TubeLight:12!RedLight:11!Fan:10!
+	$details = $dataArr[6]; // TubeLight:12!RedLight:11!Fan:10!
+
+	//$devAll = explode("!",$dataArr[6]);   
 	
 	///////////////////////////////////////////////////////////////
 	// do
     // $dev[i]=explode(":",$devAll[i]);
 	// while(devAll[i]=="")
 	//	i++
-    
+    //$i=1;
+	//do {
+    //$dev[i]=explode(":",$devAll[i]);
+		
+	//	i++;
+	//} while (devAll[i]);
+
 	
 	
 	//file_put_contents($file, $detailed."\n");
@@ -34,7 +41,7 @@
 		
 	}else{
 		$device = new Device;
-		$device->add_device($mac,$ip,$type,$name);
+		$device->add_device($mac,$ip,$type,$name,$details);
 	}
 	
 	//$log = $ip." / ".$mac."<br>";

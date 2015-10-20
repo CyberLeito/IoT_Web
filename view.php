@@ -3,25 +3,34 @@
 	include_once('includes/dbcon.php');
 	include_once('includes/device.php');
 	
-	$device = new Device;
+	$deviceObj = new Device;
 	
-	$devices = $device->get_all_devices();
+	$devices = $deviceObj->get_all_devices();
 	
-	echo "<tr><th>Device ID</th><th>IP address</th><th>Action</th></tr>";
+	echo "<tr>
+		<th>Device ID</th>
+		<th>Type</th>
+		<th>IP address</th>
+		<th>Action</th>
+	    </tr>";
 
 	foreach ($devices as $dev) {
 	
 		echo "<tr>
 				<td>".$dev['name']."</td>
+				<td>".$dev['type']."</td>
 				<td>".$dev['ip']."</td>
 				<td>
-					<button onclick=\"location.href = 'device.php?ip=".$dev['ip']."';\">Check</button>
+					<form action='devices.php' method='post'>
+					  	<input hidden type='text' name='ip' value='".$dev['ip']."'>
+					  	<input type='submit' value='Open'>
+					</form> 
 				</td>
 			</tr>";
 	}
 	
 	
-	
+	//<button onclick=\"location.href = 'devices.php?ip=".$dev['ip']."';\">Check</button>
 	
 	
 	
