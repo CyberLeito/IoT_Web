@@ -13,6 +13,8 @@
 		include_once('includes/dbcon.php');
 		include_once('includes/device.php');
 		$ip = $_POST["ip"];
+
+
 		echo "<input id='ip' hidden value='". $ip."'>";
 		$deviceObj = new Device;
 	

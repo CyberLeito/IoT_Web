@@ -3,8 +3,8 @@
 	//AT CIFSR CIFSR:STAIP,192.168.0.106 CIFSR:STAMAC,18:fe:34:f2:e5:16OKCIFSRTestProbe1CIFSRSensor
 	//AT CIFSR CIFSR:STAIP,192.168.0.106 CIFSR:STAMAC,18:fe:34:f2:e5:16OKCIFSRTestProbe2CIFSRSwitchCIFSRTubeLight:12!RedLight:11!Fan:10!
 
-	// $file = 'people.txt';
-	// file_put_contents($file, $data."\n");
+	 $file = 'people.txt';
+	 file_put_contents($file, $data."\n");
 	
 	$data = str_replace("OK","",$data);
 	$dataArr = explode("CIFSR",$data);
@@ -14,6 +14,10 @@
 	$name = $dataArr[4];
 	$type = $dataArr[5];
 	$details = $dataArr[6]; // TubeLight:12!RedLight:11!Fan:10!
+	
+	 // $hex = 'sep.txt';
+	 // file_put_contents($hex, $ip."\n");
+	
 
 	//$devAll = explode("!",$dataArr[6]);   
 	
