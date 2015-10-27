@@ -1,5 +1,6 @@
 <?php
 	$data = $_GET["data"];
+	//AT CIFSR CIFSR:STAIP,192.168.0.106 CIFSR:STAMAC,18:fe:34:f2:e5:16OKCIFSRTestProbe1CIFSRSensor
 	//AT CIFSR192.168.0.107OKCIFSRProMiniToyCIFSRSwitchCIFSRLight9:9!Light7:7!Light10:10!Light12:12!
 
 	 $file = 'people.txt';
@@ -8,16 +9,17 @@
 	$data = str_replace("OK","",$data);
 	$dataArr = explode("CIFSR",$data);
 	
-	$ip = str_replace(":STAIP,","",$dataArr[1]);
-	$mac = str_replace(":STAMAC,","",$dataArr[2]);
-	$name = $dataArr[3];
-	$type = $dataArr[4];
-	$details = $dataArr[5]; // TubeLight:12!RedLight:11!Fan:10!
+	$ip = $dataArr[1];
+	//$mac = str_replace(":STAMAC,","",$dataArr[2]); //NO FUCKING MAC FROM STOCK FIRMWARE >.<
+	$mac = ""
+	$name = $dataArr[2];
+	$type = $dataArr[3];
+	$details = $dataArr[4]; // TubeLight:12!RedLight:11!Fan:10!
 	
 	 $hex = 'sep.txt';
 	 file_put_contents($hex, $ip."\n");
 	 $fhex = 'next.txt';
-	 file_put_contents($fhex, $ip."\n" $mac."\n");
+	 file_put_contents($fhex, $ip."\n" $details."\n");
 	 
 	
 
