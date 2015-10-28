@@ -11,15 +11,15 @@
 	
 	$ip = $dataArr[1];
 	//$mac = str_replace(":STAMAC,","",$dataArr[2]); //NO FUCKING MAC FROM STOCK FIRMWARE >.<
-	$mac = "";
+	$mac = ""
 	$name = $dataArr[2];
 	$type = $dataArr[3];
 	$details = $dataArr[4]; // TubeLight:12!RedLight:11!Fan:10!
 	
-	 // $hex = 'sep.txt';
-	 // file_put_contents($hex, $ip."\n");
-	 // $fhex = 'next.txt';
-	 // file_put_contents($fhex, $ip."\n" $details."\n");
+	 $hex = 'sep.txt';
+	 file_put_contents($hex, $ip."\n");
+	 $fhex = 'next.txt';
+	 file_put_contents($fhex, $ip."\n" $details."\n");
 	 
 	
 
