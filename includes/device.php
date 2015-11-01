@@ -5,7 +5,7 @@ class Device{
 	public function add_device($mac,$ip,$type,$name,$details){
 		global $pdo;
 		//$query = $pdo->prepare("INSERT INTO deviceList (mac,ip,type,name,details) values(?,?,?,?,?)");
-		$query = $pdo->prepare("INSERT INTO deviceList (mac,ip,type,name,details) values(?,?,?,?,?) ON DUPLICATE KEY UPDATE details='" .$details. "'");
+		$query = $pdo->prepare("INSERT INTO deviceList (mac,ip,type,name,details) values(?,?,?,?,?) ON DUPLICATE KEY UPDATE details='" .$details. "', mac='" .$mac. "', ip='" .$ip. "', type='" .$type. "'  ");
 		$query->bindValue(1,$mac);
 		$query->bindValue(2,$ip);
 		$query->bindValue(3,$type);

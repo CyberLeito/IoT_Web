@@ -12,13 +12,13 @@
 	<?php
 		include_once('includes/dbcon.php');
 		include_once('includes/device.php');
-		$dName = $_POST["dName"];
+		$ip = $_POST["ip"];
 
 
-		echo "<input id='dName' hidden value='". $dName."'>";
+		echo "<input id='ip' hidden value='". $ip."'>";
 		$deviceObj = new Device;
 	
-		$result = $deviceObj->get_components($dName);
+		$result = $deviceObj->get_controls($ip);
 		$controls = $result['details'];
 		$controls = substr($controls,0,strlen($controls)-1);
 		$controlsArray = explode("!",$controls);   

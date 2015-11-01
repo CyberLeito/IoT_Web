@@ -22,12 +22,15 @@
 				<td>".$dev['ip']."</td>
 				<td>
 					<form action='devices.php' method='post'>
-					  	<input hidden type='text' name='ip' value='".$dev['ip']."'>
+					
+						<input hidden type='text' name='dName' value='".$dev['name']."'> 
 					  	<input type='submit' value='Open'>
 					</form> 
 				</td>
 			</tr>";
 	}
+						    //<input hidden type='text' name='ip' value='".$dev['ip']."'> //changing ip to name
+
 	
 	
 	//<button onclick=\"location.href = 'devices.php?ip=".$dev['ip']."';\">Check</button>
