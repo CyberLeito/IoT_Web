@@ -15,14 +15,20 @@
 		$dName = $_POST["dName"];
 
 
-		echo "<input id='dName' hidden value='". $dName."'>";
+		//echo "<input id='dName' hidden value='". $dName."'>";
+		
 		$deviceObj = new Device;
 	
 		$result = $deviceObj->get_components($dName);
+		$ip_info = $deviceObj->get_ip($dName); //added funstion to get ip
+		$ip = $ip_info['ip'];
+		//echo $ip;
 		$controls = $result['details'];
 		$controls = substr($controls,0,strlen($controls)-1);
 		$controlsArray = explode("!",$controls);   
 
+		echo "<input id='ip' hidden value='". $ip."'>";
+		
 		//$controls = //TubeLight:12!RedLight:11!Fan:10!
 		echo "<table  align='center' id='controlList'>";
 

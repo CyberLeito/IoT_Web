@@ -48,6 +48,15 @@ class Device{
 
 	}
 
+	
+	public function get_ip($name){
+		global $pdo;
+		$query = $pdo->prepare("SELECT ip FROM deviceList WHERE name = ?");
+		$query->bindValue(1,$name);
+		$query->execute();
+		return $query->fetch();
+
+	}
 
 
 }
